@@ -33,6 +33,12 @@ class QuizController extends Controller
         return back()->with("success", "Successfully deleted");
     }
 
+    public function deleteResult($id)
+    {
+        Results::find($id)->delete();
+        return back()->with("success", "Successfully deleted");
+    }
+
     public function sendToStudents(Request $request)
     {
         $emails = explode(',', $request->emails);
@@ -84,8 +90,10 @@ class QuizController extends Controller
         return view("pages.result", $data);
     }
 
-    public function showResults($id) {
-        dd($id);
+    public function showResults($id)
+    {
+        $data["results"] = Results::where('quiz_id', $id)->where('user_id', auth()->id())->paginate(5);
+        return view('pages.results', $data);
     }
 }
 

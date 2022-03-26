@@ -12,6 +12,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/quiz', [QuizController::class, "index"])->name('quiz');
     Route::get('/delete-quiz/{id}', [QuizController::class, "deleteQuiz"])->name('delete-quiz');
+    Route::get('/delete-result/{id}', [QuizController::class, "deleteResult"])->name('delete-result');
     Route::get('/show-results/{id}', [QuizController::class, "showResults"])->name('show-results');
     Route::get('/delete-question/{id}', [QuestionsController::class, "deleteQuestion"])->name('delete-question');
     Route::get('/create-quiz', [QuizController::class, "createNewQuiz"])->name('create-quiz');

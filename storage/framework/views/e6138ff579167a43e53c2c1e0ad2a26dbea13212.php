@@ -97,7 +97,7 @@
                                         </td>
                                         <td>
                                             <a href="<?php echo e(route("show-results",['id'=>$quiz->id])); ?>"
-                                               class="btn btn-sm btn-danger text-nowrap">Delete quiz</a>
+                                               class="btn btn-sm btn-dark text-nowrap">Show results</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
