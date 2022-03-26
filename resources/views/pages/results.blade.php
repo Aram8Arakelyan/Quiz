@@ -38,6 +38,8 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                        @else
+                            <h2 class="text-center">No results yet</h2>
                         @endif
                     </div>
 

@@ -44,6 +44,8 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
+                        <?php else: ?>
+                            <h2 class="text-center">No results yet</h2>
                         <?php endif; ?>
                     </div>
 
