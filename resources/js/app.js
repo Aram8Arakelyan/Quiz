@@ -18,7 +18,7 @@ $(()=>{
         timePicker: true,
         minDate: today,
         locale: {
-            format: 'DD-MM-YYYY hh:mm'
+            format: 'DD-MM-YYYY hh:mm A'
         }
     })
 })

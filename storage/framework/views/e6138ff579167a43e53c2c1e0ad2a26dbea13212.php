@@ -70,7 +70,7 @@
                                     <th>Finished at</th>
                                     <th>Add questions</th>
                                     <th>Delete</th>
-                                    <th>Send to students</th>
+                                    <th class="text-nowrap">Send to students</th>
                                     <th class="text-nowrap">Show results</th>
                                 </tr>
                                 </thead>

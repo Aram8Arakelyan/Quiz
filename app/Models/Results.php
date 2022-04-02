@@ -23,6 +23,8 @@ class Results extends Model
             $result->mark = $mark;
             $result->finished_at = now();
             $result->save();
+        } else {
+
         }
         return ['mark' => $mark, "total" => $quiz->mark];
     }

@@ -28,6 +28,8 @@
                 <ul>
                     <li>Quiz Name: {{$quiz->name}}</li>
                     <li>Total mark: {{$quiz->mark}}</li>
+                    <li>Started at: {{$quiz->started_at}}</li>
+                    <li>Finished at: {{$quiz->finished_at}}</li>
                 </ul>
                 <div>
                     <form id="quiz-form" method="post" action="{{route("send-result")}}">
@@ -45,15 +47,17 @@
                                 </div>
                             </div>
                             <hr>
-                            @foreach($question->data["answers"] as $answer)
-                                <div>
-                                    <label for="">
-                                        @if($question->data['question_type'] == "optional")
-                                            <input type="radio" value="{{$answer}}" name="{{$question->id}}">
-                                        @endif
-                                        {{$answer}}
-                                    </label>
-                                </div>
+                            @foreach($question->data["answers"] as $key => $answer)
+                                @if($key!='right_answer')
+                                    <div>
+                                        <label for="">
+                                            @if($question->data['question_type'] == "optional")
+                                                <input type="radio" value="{{$answer}}" name="{{$question->id}}">
+                                            @endif
+                                            {{$answer}}
+                                        </label>
+                                    </div>
+                                @endif
                             @endforeach
                             <hr>
                             @if($question->data['question_type'] != "optional")
