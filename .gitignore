@@ -1,7 +1,9 @@
+node_modules
 /public/hot
 /public/storage
-/storage/framework/views
-/storage/*.key
+storage/framework/views
+storage/*.key
+/vendor
 .env
 .env.backup
 .phpunit.result.cache
@@ -12,3 +14,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+package-lock
+composer-lock
+
