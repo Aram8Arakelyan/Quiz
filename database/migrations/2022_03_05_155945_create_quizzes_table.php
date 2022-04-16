@@ -19,6 +19,8 @@ class CreateQuizzesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string("name");
             $table->integer("mark");
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('finished_at')->nullable();
             $table->timestamps();
         });
     }
