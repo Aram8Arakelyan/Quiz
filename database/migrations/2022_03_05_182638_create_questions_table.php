@@ -20,6 +20,8 @@ class CreateQuestionsTable extends Migration
             $table->foreign('quiz_id')->references('id')->on('quizzes')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string("question");
+            $table->string("question_type");
+            $table->integer("mark");
             $table->json("data")->nullable();
             $table->timestamps();
         });

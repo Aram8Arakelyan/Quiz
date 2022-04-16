@@ -37,7 +37,7 @@
                                 <tr>
                                     <td><?php echo e($question->id); ?></td>
                                     <td><?php echo e($question->question); ?></td>
-                                    <td><?php echo e($question->data["mark"]); ?></td>
+                                    <td><?php echo e($question->mark); ?></td>
                                     <td>
                                         <a href="<?php echo e(route("delete-question",['id'=>$question->id])); ?>"
                                            class="btn btn-sm btn-danger">Delete question</a>

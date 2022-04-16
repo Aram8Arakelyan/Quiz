@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{$question->id}}</td>
                                     <td>{{ $question->question }}</td>
-                                    <td>{{ $question->data["mark"] }}</td>
+                                    <td>{{ $question->mark }}</td>
                                     <td>
                                         <a href="{{route("delete-question",['id'=>$question->id])}}"
                                            class="btn btn-sm btn-danger">Delete question</a>

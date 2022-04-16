@@ -50,26 +50,24 @@
 
                                 </div>
                                 <div>
-                                    Mark: <?php echo e($question->data["mark"]); ?>
+                                    Mark: <?php echo e($question->mark); ?>
 
                                 </div>
                             </div>
                             <hr>
-                            <?php $__currentLoopData = $question->data["answers"]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $answer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($key!='right_answer'): ?>
-                                    <div>
-                                        <label for="">
-                                            <?php if($question->data['question_type'] == "optional"): ?>
-                                                <input type="radio" value="<?php echo e($answer); ?>" name="<?php echo e($question->id); ?>">
-                                            <?php endif; ?>
-                                            <?php echo e($answer); ?>
+                            <?php $__currentLoopData = $question->answers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $answer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div>
+                                    <label for="">
+                                        <?php if($question->question_type == "optional"): ?>
+                                            <input type="radio" value="<?php echo e($answer->answer); ?>" name="<?php echo e($question->id); ?>">
+                                        <?php endif; ?>
+                                        <?php echo e($answer->answer); ?>
 
-                                        </label>
-                                    </div>
-                                <?php endif; ?>
+                                    </label>
+                                </div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <hr>
-                            <?php if($question->data['question_type'] != "optional"): ?>
+                            <?php if($question->question_type != "optional"): ?>
                                 <input type="text" name="<?php echo e($question->id); ?>">
                                 <hr>
                             <?php endif; ?>

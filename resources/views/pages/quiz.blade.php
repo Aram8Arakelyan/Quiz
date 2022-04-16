@@ -43,24 +43,22 @@
                                     {{$question->question}}
                                 </div>
                                 <div>
-                                    Mark: {{$question->data["mark"]}}
+                                    Mark: {{$question->mark}}
                                 </div>
                             </div>
                             <hr>
-                            @foreach($question->data["answers"] as $key => $answer)
-                                @if($key!='right_answer')
-                                    <div>
-                                        <label for="">
-                                            @if($question->data['question_type'] == "optional")
-                                                <input type="radio" value="{{$answer}}" name="{{$question->id}}">
-                                            @endif
-                                            {{$answer}}
-                                        </label>
-                                    </div>
-                                @endif
+                            @foreach($question->answers as $key => $answer)
+                                <div>
+                                    <label for="">
+                                        @if($question->question_type == "optional")
+                                            <input type="radio" value="{{$answer->answer}}" name="{{$question->id}}">
+                                        @endif
+                                        {{$answer->answer}}
+                                    </label>
+                                </div>
                             @endforeach
                             <hr>
-                            @if($question->data['question_type'] != "optional")
+                            @if($question->question_type != "optional")
                                 <input type="text" name="{{$question->id}}">
                                 <hr>
                             @endif

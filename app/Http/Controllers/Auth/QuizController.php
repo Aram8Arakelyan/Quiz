@@ -60,7 +60,7 @@ class QuizController extends Controller
 
     public function startQuiz($email, $id)
     {
-        $quiz = Quiz::with("questions")->find($id);
+        $quiz = Quiz::with("questions.answers")->find($id);
         if ($quiz->finished_at && $quiz->finished_at < now()) return view("welcome");
         $result = Results::where(['email' => $email, "quiz_id" => $id])->first();
         if ($result && $result->finished_at) return view("welcome");
