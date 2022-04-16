@@ -21,7 +21,7 @@ class CreateResultsTable extends Migration
             $table->foreign('quiz_id')->references('id')->on('quizzes')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->integer('mark')->nullable();
-            $table->json('data')->nullable();
+            $table->text('data')->nullable();
             $table->timestamp('started_at')->nullable();
             $table->timestamp('finished_at')->nullable();
             $table->timestamps();
