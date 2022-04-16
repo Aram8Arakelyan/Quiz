@@ -51,7 +51,7 @@ class QuizController extends Controller
                 Notification::route('mail', $email)
                     ->notify(new SendToStudents($request->quiz_id, $email));
             } catch (\Exception $exception) {
-
+                dd($exception);
             }
         }
 
