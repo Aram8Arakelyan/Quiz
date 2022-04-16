@@ -22,7 +22,6 @@ class CreateQuestionsTable extends Migration
             $table->string("question");
             $table->string("question_type");
             $table->integer("mark");
-            $table->json("data")->nullable();
             $table->timestamps();
         });
     }
