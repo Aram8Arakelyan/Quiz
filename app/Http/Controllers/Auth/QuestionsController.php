@@ -27,7 +27,7 @@ class QuestionsController extends Controller
         if (count($request->all()) <= 4) {
             return back()->withErrors(['Please provide answers!']);
         }
-        $sum = Question::where('quiz_id', $quiz_id)->sum('data->mark');
+        $sum = Question::where('quiz_id', $quiz_id)->sum('mark');
         if ($sum + $request->mark > Quiz::find($quiz_id)->mark) {
             return back()->withErrors(['Question mark is wrong!']);
         }
