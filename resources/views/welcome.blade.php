@@ -21,13 +21,14 @@
                 background-size: cover;
                 width: 100%;
                 display: inline-block;
+                background-position: center;
             }
         </style>
     </head>
-    <body style="background-color: lightgray" class="antialiased">
+    <body style="background-color: lightgray;overflow: auto" class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen text-white sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a style="color: white" href="{{ url('/dashboard') }}" class="text-sm text-white  underline">Dashboard</a>
                     @else
